@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+double defaultMargin = 24.0;
+double defaultRadius = 17.0;
+
+// DAFTAR WARNA YANG DIPAKAI
+Color kBlackColor = Color.fromARGB(255, 0, 0, 0); // warna hitam
+Color kWhiteColor = Color(0xffFFFFFF); // warna putih
+Color kGreyColor = Color(0xff999999); // warna abu-abu
+Color kGreenColor = Color(0xff83CAC1); // warna button ijo & page subcourse ijo
+Color kRedColor = Color(0xffEB70A5); // warna snackbar error
+Color kTransparentColor = Colors.transparent; // warna transparan kalo butuh
+Color kPinkColor =
+    Color(0xffEEA899); // warna button yg pink & warna page subcourse pink
+Color kLightBrown = Color(0xffF5D3B4); // warna appbar bagian atas
+Color kBrownColor = Color(0xffCE7D6B); // warna font judul page di appbar
+
+// TEXT STYLE FONT SESUAI WARNANYA
+TextStyle blackTextStyle = GoogleFonts.poppins(color: kBlackColor);
+TextStyle whiteTextStyle = GoogleFonts.poppins(color: kWhiteColor);
+TextStyle greyTextStyle = GoogleFonts.poppins(color: kGreyColor);
+TextStyle redTextStyle = GoogleFonts.poppins(color: kRedColor);
+TextStyle greenTextStyle = GoogleFonts.poppins(color: kGreenColor);
+TextStyle brownTextStyle = GoogleFonts.poppins(color: kBrownColor);
+
+// FONT WEIGHT
+FontWeight light = FontWeight.w300;
+FontWeight reguler = FontWeight.w400;
+FontWeight medium = FontWeight.w500;
+FontWeight semiBold = FontWeight.w600;
+FontWeight bold = FontWeight.w700;
+FontWeight extraBold = FontWeight.w800;
+FontWeight black = FontWeight.w900;

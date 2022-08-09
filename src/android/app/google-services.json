@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "675141420620",
+    "project_id": "mind-8ec18",
+    "storage_bucket": "mind-8ec18.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675141420620:android:b3796b242a949c0a4d16e9",
+        "android_client_info": {
+          "package_name": "com.milestone.mind"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "675141420620-p9pdi83aii3h99k00sv8t7jbp4s3lsqu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6nv0MgxKXprFu_h1IcLR6tBLiLeVWO-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "675141420620-p9pdi83aii3h99k00sv8t7jbp4s3lsqu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

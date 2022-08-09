@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(src LANGUAGES CXX)
+project(milestone LANGUAGES CXX)
 
-set(BINARY_NAME "src")
+set(BINARY_NAME "milestone")
 
 cmake_policy(SET CMP0063 NEW)
 

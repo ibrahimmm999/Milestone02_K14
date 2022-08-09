@@ -1,4 +1,9 @@
-# src
+note :
+1. Kalo mau bikin button tinggal panggil widget CustomButton, ntar tinggal isi aja heightbutton, widthbutton, buttoncolor, buttontext, sama function buat ontap nya
+2. Kalo mau bikin appbar yang di atas warna kuning itu tinggal panggil aja widget CustomAppBar ntar tinggal isi judulnya mau apa
+3. Buat warna atau text style atau lainnya bisa pake yang tersedia di shared/theme.dart
+
+# milestone
 
 A new Flutter project.
 
