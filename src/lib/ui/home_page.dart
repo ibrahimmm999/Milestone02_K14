@@ -8,6 +8,7 @@ import 'package:milestone/widgets/mood_card.dart';
 import 'package:bloc/bloc.dart';
 
 import '../models/content_model.dart';
+import '../widgets/log_out_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -116,7 +117,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       body: ListView(
-        children: [header(), title(), moodList()],
+        children: [header(), title(), moodList(), LogOutButton()],
       ),
     );
   }

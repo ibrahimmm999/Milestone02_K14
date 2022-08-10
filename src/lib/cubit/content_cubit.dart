@@ -1,5 +1,5 @@
 import 'package:milestone/models/content_model.dart';
-import 'package:milestone/services/destination_service.dart';
+import 'package:milestone/services/content_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 part 'content_state.dart';
