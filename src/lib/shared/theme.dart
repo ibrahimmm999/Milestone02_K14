@@ -20,6 +20,7 @@ Color kLightYellowColor = Color(
 Color kDarkBrownColor = Color(0xff573926); // warna font di container content
 Color kOrangeColor = Color(0xffFE8235); // warna font di container content
 Color kDarkGreyColor = Color(0xff707070); // warna font di quote content
+Color kPurpleColor = Color(0xff6979F8); // warna font di halaman settings
 
 // TEXT STYLE FONT SESUAI WARNANYA
 TextStyle blackTextStyle = GoogleFonts.poppins(color: kBlackColor);
@@ -31,6 +32,7 @@ TextStyle brownTextStyle = GoogleFonts.poppins(color: kBrownColor);
 TextStyle darkBrownTextStyle = GoogleFonts.poppins(color: kDarkBrownColor);
 TextStyle orangeTextStyle = GoogleFonts.poppins(color: kOrangeColor);
 TextStyle darkGreyTextStyle = GoogleFonts.poppins(color: kDarkGreyColor);
+TextStyle purpleTextStyle = GoogleFonts.poppins(color: kPurpleColor);
 
 // FONT WEIGHT
 FontWeight light = FontWeight.w300;

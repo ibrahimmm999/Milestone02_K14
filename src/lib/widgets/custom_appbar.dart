@@ -17,7 +17,11 @@ class CustomAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                if (Navigator.canPop(context)) {
+                  Navigator.pop(context);
+                } else {}
+              },
               icon: Icon(
                 Icons.keyboard_arrow_left,
                 size: 28,
@@ -28,7 +32,11 @@ class CustomAppBar extends StatelessWidget {
             style: brownTextStyle.copyWith(fontSize: 18, fontWeight: bold),
           ),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                if (Navigator.canPop(context)) {
+                  Navigator.pop(context);
+                } else {}
+              },
               icon: Icon(
                 Icons.keyboard_arrow_right,
                 size: 28,

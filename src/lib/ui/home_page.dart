@@ -52,7 +52,9 @@ class _HomePageState extends State<HomePage> {
             width: 23.5,
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/settings-page');
+            },
             child: Container(
               width: 25,
               height: 25,

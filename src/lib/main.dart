@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:milestone/ui/landing_page.dart';
+import 'package:milestone/ui/settings_page.dart';
 import 'package:milestone/ui/sign_in_page.dart';
 import 'package:milestone/ui/sign_up_page.dart';
 import 'package:milestone/ui/splash_page.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
           '/sign-up': (context) => SignUpPage(),
           '/landing-page': (context) => LandingPage(),
           '/transition-page': (context) => TransitionPage(),
+          '/settings-page': (context) => SettingsPage(),
 
           //'/main': (context) => MainPage(),
         },
