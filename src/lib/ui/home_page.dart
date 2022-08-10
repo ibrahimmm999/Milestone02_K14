@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/settings-page');
+              Navigator.pushNamed(context, '/subcourses-page');
             },
             child: Container(
               width: 25,
