@@ -15,6 +15,11 @@ Color kPinkColor =
     Color(0xffEEA899); // warna button yg pink & warna page subcourse pink
 Color kLightBrown = Color(0xffF5D3B4); // warna appbar bagian atas
 Color kBrownColor = Color(0xffCE7D6B); // warna font judul page di appbar
+Color kLightYellowColor = Color(
+    0xffFEF3E7); // warna container content di homepage, notification, hotline
+Color kDarkBrownColor = Color(0xff573926); // warna font di container content
+Color kOrangeColor = Color(0xffFE8235); // warna font di container content
+Color kDarkGreyColor = Color(0xff707070); // warna font di quote content
 
 // TEXT STYLE FONT SESUAI WARNANYA
 TextStyle blackTextStyle = GoogleFonts.poppins(color: kBlackColor);
@@ -23,6 +28,9 @@ TextStyle greyTextStyle = GoogleFonts.poppins(color: kGreyColor);
 TextStyle redTextStyle = GoogleFonts.poppins(color: kRedColor);
 TextStyle greenTextStyle = GoogleFonts.poppins(color: kGreenColor);
 TextStyle brownTextStyle = GoogleFonts.poppins(color: kBrownColor);
+TextStyle darkBrownTextStyle = GoogleFonts.poppins(color: kDarkBrownColor);
+TextStyle orangeTextStyle = GoogleFonts.poppins(color: kOrangeColor);
+TextStyle darkGreyTextStyle = GoogleFonts.poppins(color: kDarkGreyColor);
 
 // FONT WEIGHT
 FontWeight light = FontWeight.w300;

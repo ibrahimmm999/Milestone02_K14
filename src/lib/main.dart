@@ -8,6 +8,7 @@ import 'package:milestone/ui/splash_page.dart';
 import 'package:milestone/ui/transition_page.dart';
 
 import 'cubit/auth_cubit.dart';
+import 'cubit/content_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => AuthCubit()),
+        BlocProvider(create: (context) => ContentCubit()),
       ],
       child: MaterialApp(
         home: SplashPage(),

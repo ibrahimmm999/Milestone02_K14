@@ -5,9 +5,11 @@ class ContentModel extends Equatable {
   final String title;
   final String imageUrl;
   final String subtitle;
+  final bool isMostViewed;
 
   ContentModel({
     required this.id,
+    required this.isMostViewed,
     this.title = '',
     this.imageUrl = '',
     this.subtitle = '',
@@ -15,17 +17,18 @@ class ContentModel extends Equatable {
 
   factory ContentModel.fromJson(String id, Map<String, dynamic> json) =>
       ContentModel(
-        id: id,
-        title: json['title'],
-        imageUrl: json['imageUrl'],
-        subtitle: json['subtitle'],
-      );
+          id: id,
+          title: json['title'],
+          imageUrl: json['imageUrl'],
+          subtitle: json['subtitle'],
+          isMostViewed: json['isMostViewed']);
 
   Map<String, dynamic> toJson() => {
         'id': id,
         'title': title,
         'imageUrl': imageUrl,
         'subtitle': subtitle,
+        'isMostViewed': isMostViewed,
       };
 
   @override
@@ -35,5 +38,6 @@ class ContentModel extends Equatable {
         title,
         imageUrl,
         subtitle,
+        isMostViewed,
       ];
 }
