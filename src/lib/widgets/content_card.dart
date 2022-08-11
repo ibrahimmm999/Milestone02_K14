@@ -2,9 +2,9 @@ import 'package:milestone/models/content_model.dart';
 import 'package:milestone/shared/theme.dart';
 import 'package:flutter/material.dart';
 
-class ContentTile extends StatelessWidget {
+class ContentCard extends StatelessWidget {
   final ContentModel content;
-  const ContentTile(
+  const ContentCard(
     this.content, {
     Key? key,
   }) : super(key: key);

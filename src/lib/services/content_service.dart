@@ -15,4 +15,19 @@ class ContentService {
       throw e;
     }
   }
+
+  Future<ContentModel> getContentById(String id) async {
+    try {
+      DocumentSnapshot snapshot = await _contentsReference.doc(id).get();
+      return ContentModel(
+        id: id,
+        isMostViewed: snapshot['isMostViewed'],
+        title: snapshot['title'],
+        subtitle: snapshot['subtitle'],
+        imageUrl: snapshot['imageUrl'],
+      );
+    } catch (e) {
+      throw e;
+    }
+  }
 }

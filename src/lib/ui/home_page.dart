@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:milestone/cubit/auth_cubit.dart';
 import 'package:milestone/cubit/content_cubit.dart';
 import 'package:milestone/shared/theme.dart';
+import 'package:milestone/ui/article_page.dart';
 import 'package:milestone/ui/sign_in_page.dart';
-import 'package:milestone/widgets/content_tile.dart';
+import 'package:milestone/widgets/content_card.dart';
+import 'package:milestone/widgets/custom_header.dart';
 import 'package:milestone/widgets/mood_card.dart';
 import 'package:bloc/bloc.dart';
 
@@ -27,43 +29,8 @@ class _HomePageState extends State<HomePage> {
 
   Widget build(BuildContext context) {
     Widget header() {
-      return Container(
-        width: double.infinity,
-        margin: EdgeInsets.only(right: 25, left: 25, top: 45, bottom: 24),
-        height: 98,
-        child: Row(children: [
-          Container(
-            width: 45,
-            height: 45,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/profile_pic.png'),
-                    fit: BoxFit.cover)),
-          ),
-          Spacer(),
-          Container(
-            width: 35,
-            height: 35,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/notif_vector.png'))),
-          ),
-          SizedBox(
-            width: 23.5,
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, '/settings-page');
-            },
-            child: Container(
-              width: 25,
-              height: 25,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/setting_vector.png'))),
-            ),
-          ),
-        ]),
+      return customHeader(
+        title: '',
       );
     }
 
@@ -125,7 +92,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           Container(
             width: double.infinity,
-            margin: EdgeInsets.only(left: 25, right: 25, top: 26, bottom: 16),
+            margin: EdgeInsets.only(left: 25, right: 25, top: 5, bottom: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -185,11 +152,16 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(left: 15, top: 21),
-            height: 79,
+            padding: EdgeInsets.only(
+              left: 15,
+              top: 5,
+            ),
+            height: 89,
             width: double.infinity,
             margin: EdgeInsets.only(right: 25, left: 25, bottom: 8),
-            decoration: BoxDecoration(color: Color(0xffF4F4F4)),
+            decoration: BoxDecoration(
+                color: Color(0xffF8F6F6),
+                borderRadius: BorderRadius.circular(10)),
             child: Row(
               children: [
                 Container(
@@ -216,13 +188,122 @@ class _HomePageState extends State<HomePage> {
       );
     }
 
-    Widget content(List<ContentModel> contents) {
+    Widget articleOfTheDayTitle() {
+      return Column(
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 20, bottom: 10, left: 25, right: 25),
+            child: Row(
+              children: [
+                Text(
+                  'Article of the Day',
+                  style:
+                      blackTextStyle.copyWith(fontSize: 16, fontWeight: bold),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ArticlePage()));
+                  },
+                  child: Container(
+                      margin: EdgeInsets.only(left: 109),
+                      child: Row(
+                        children: [
+                          Text('See more',
+                              style: blueTextStyle.copyWith(fontSize: 12)),
+                          Icon(
+                            Icons.keyboard_arrow_right,
+                            color: kBlueColor,
+                            size: 16,
+                          )
+                        ],
+                      )),
+                )
+              ],
+            ),
+          ),
+        ],
+      );
+    }
+
+    Widget course() {
+      return GestureDetector(
+        onTap: () {},
+        child: Container(
+          height: 151,
+          width: double.infinity,
+          margin: EdgeInsets.only(top: 20, left: 25, right: 25, bottom: 100),
+          decoration: BoxDecoration(
+              color: kLightYellowColor,
+              borderRadius: BorderRadius.circular(18)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding:
+                    EdgeInsets.only(top: 16, left: 23, right: 13, bottom: 7),
+                width: 200,
+                child: Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Take a course on Journaling!',
+                        style: darkBrownTextStyle.copyWith(
+                            fontSize: 18, fontWeight: extraBold),
+                        overflow: TextOverflow.visible,
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        'Lorem ipsum is the best',
+                        overflow: TextOverflow.ellipsis,
+                        style: darkBrownTextStyle.copyWith(
+                            fontWeight: light, fontSize: 12),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        'View More',
+                        style: orangeTextStyle.copyWith(
+                            fontSize: 16, fontWeight: bold),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 13,
+                height: 151,
+              ),
+              Container(
+                height: 151,
+                width: 120,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18),
+                    image: DecorationImage(
+                        image: NetworkImage(
+                            'https://firebasestorage.googleapis.com/v0/b/mind-8ec18.appspot.com/o/content%2Fcontent_2.png?alt=media&token=b33791b2-d8fb-4c15-89d7-5e75cf807e76'),
+                        fit: BoxFit.cover)),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    Widget articleOTD(List<ContentModel> contents) {
       return SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(top: 26, bottom: 30),
+          margin: EdgeInsets.only(bottom: 10),
           child: Column(
             children: contents.map((ContentModel content) {
-              return ContentTile(content);
+              if (content.isMostViewed == true) {
+                return ContentCard(content);
+              }
+              return SizedBox();
             }).toList(),
           ),
         ),
@@ -245,9 +326,10 @@ class _HomePageState extends State<HomePage> {
               header(),
               title(),
               moodList(),
+              articleOfTheDayTitle(),
+              articleOTD(state.content),
               sideContent(),
-              content(state.content),
-              LogOutButton()
+              course(),
             ],
           ),
         );
