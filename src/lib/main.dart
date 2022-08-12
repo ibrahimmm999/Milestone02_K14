@@ -6,6 +6,7 @@ import 'package:milestone/ui/settings_page.dart';
 import 'package:milestone/ui/sign_in_page.dart';
 import 'package:milestone/ui/sign_up_page.dart';
 import 'package:milestone/ui/splash_page.dart';
+import 'package:milestone/ui/subcourses_page.dart';
 import 'package:milestone/ui/transition_page.dart';
 
 import 'cubit/auth_cubit.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
           '/landing-page': (context) => LandingPage(),
           '/transition-page': (context) => TransitionPage(),
           '/settings-page': (context) => SettingsPage(),
+          '/subcourses-page': (context) => SubCoursesPage(),
 
           //'/main': (context) => MainPage(),
         },

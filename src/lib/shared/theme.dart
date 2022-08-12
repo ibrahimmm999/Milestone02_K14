@@ -36,6 +36,12 @@ TextStyle darkGreyTextStyle = GoogleFonts.poppins(color: kDarkGreyColor);
 TextStyle purpleTextStyle = GoogleFonts.poppins(color: kPurpleColor);
 TextStyle blueTextStyle = GoogleFonts.poppins(color: kBlueColor);
 
+// SUBCOURSE TEXT STYLE
+TextStyle courseStyleTitle = GoogleFonts.comfortaa(color: kWhiteColor);
+TextStyle courseStyleBlack = GoogleFonts.comfortaa(color: kBlackColor);
+TextStyle courseStyleGrey = GoogleFonts.comfortaa(color: kGreyColor);
+TextStyle courseStylePurple = GoogleFonts.comfortaa(color: kPurpleColor);
+
 // FONT WEIGHT
 FontWeight light = FontWeight.w300;
 FontWeight reguler = FontWeight.w400;
