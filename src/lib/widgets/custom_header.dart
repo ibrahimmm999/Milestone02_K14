@@ -28,12 +28,17 @@ class customHeader extends StatelessWidget {
         ),
         Row(
           children: [
-            Container(
-              width: 35,
-              height: 35,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/notif_vector.png'))),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/notifications-page');
+              },
+              child: Container(
+                width: 35,
+                height: 35,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/notif_vector.png'))),
+              ),
             ),
             SizedBox(
               width: 10,

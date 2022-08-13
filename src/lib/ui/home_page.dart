@@ -4,6 +4,7 @@ import 'package:milestone/cubit/auth_cubit.dart';
 import 'package:milestone/cubit/content_cubit.dart';
 import 'package:milestone/shared/theme.dart';
 import 'package:milestone/ui/article_page.dart';
+import 'package:milestone/ui/hotline_page.dart';
 import 'package:milestone/ui/sign_in_page.dart';
 import 'package:milestone/widgets/content_card.dart';
 import 'package:milestone/widgets/custom_header.dart';
@@ -127,7 +128,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HotlinePage()));
+                  },
                   child: Container(
                     height: 62,
                     width: 155,
