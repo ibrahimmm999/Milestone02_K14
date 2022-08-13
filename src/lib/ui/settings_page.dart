@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:milestone/ui/settings_detail_page.dart';
 import 'package:milestone/shared/theme.dart';
 import 'package:milestone/widgets/custom_appbar.dart';
 import 'package:milestone/widgets/custom_settingbutton.dart';
@@ -66,19 +67,37 @@ class SettingsPage extends StatelessWidget {
                         SettingsButton(
                           buttonText: "Profile Information",
                           buttonDesc: "Name, Email, Security",
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        SettingsDetailPage()));
+                          },
                           imagefile: 'assets/profileset.png',
                         ),
                         SettingsButton(
                           buttonText: "Contents",
                           buttonDesc: "Control your contents",
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        SettingsDetailPage()));
+                          },
                           imagefile: 'assets/contentset.png',
                         ),
                         SettingsButton(
                           buttonText: "Name, Email, Security",
                           buttonDesc: "Change your current password",
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        SettingsDetailPage()));
+                          },
                           imagefile: 'assets/passwordset.png',
                         ),
                       ],
@@ -98,7 +117,13 @@ class SettingsPage extends StatelessWidget {
                         SettingsButton(
                           buttonText: "Push Notifications",
                           buttonDesc: "New Contracts Sign or Send",
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        SettingsDetailPage()));
+                          },
                           imagefile: 'assets/notifset.png',
                         ),
                       ],
@@ -118,19 +143,37 @@ class SettingsPage extends StatelessWidget {
                         SettingsButton(
                           buttonText: "Rate our App",
                           buttonDesc: "Rate and review us!",
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        SettingsDetailPage()));
+                          },
                           imagefile: 'assets/rateset.png',
                         ),
                         SettingsButton(
                           buttonText: "Send Feedback",
                           buttonDesc: "Share your thoughts",
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        SettingsDetailPage()));
+                          },
                           imagefile: 'assets/feedbset.png',
                         ),
                         SettingsButton(
                           buttonText: "Privacy Policy",
                           buttonDesc: "Read our privacy policy",
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        SettingsDetailPage()));
+                          },
                           imagefile: 'assets/priposet.png',
                         ),
                       ],
