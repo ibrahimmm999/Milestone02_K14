@@ -7,6 +7,7 @@ import 'package:milestone/ui/settings_page.dart';
 import 'package:milestone/ui/sign_in_page.dart';
 import 'package:milestone/ui/sign_up_page.dart';
 import 'package:milestone/ui/splash_page.dart';
+import 'package:milestone/ui/courses_page.dart';
 import 'package:milestone/ui/subcourses_page.dart';
 import 'package:milestone/ui/transition_page.dart';
 
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
           '/transition-page': (context) => TransitionPage(),
           '/settings-page': (context) => SettingsPage(),
           '/notifications-page': (context) => NotificationsPage(),
-
+          '/couses-page': (context) => CoursesPage(),
           '/subcourses-page': (context) => SubCoursesPage(),
 
           //'/main': (context) => MainPage(),
