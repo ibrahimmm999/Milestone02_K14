@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:milestone/models/course_model.dart';
-import 'package:milestone/ui/video_course_page.dart';
+import 'package:milestone/ui/subcourses2_page.dart';
 
 import '../shared/theme.dart';
-import 'subcourses2_page.dart';
 
 class SubCoursesPage extends StatelessWidget {
   final CourseModel course;
@@ -57,7 +56,8 @@ class SubCoursesPage extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => VideoCoursePage(
+                  builder: (context) => SubCourses2Page(
+                        title: course.titleSub1,
                         videoUrl: course.videoUrl1,
                       )));
         },
@@ -119,7 +119,8 @@ class SubCoursesPage extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => VideoCoursePage(
+                  builder: (context) => SubCourses2Page(
+                        title: course.titleSub2,
                         videoUrl: course.videoUrl2,
                       )));
         },
@@ -181,7 +182,8 @@ class SubCoursesPage extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => VideoCoursePage(
+                  builder: (context) => SubCourses2Page(
+                        title: course.titleSub3,
                         videoUrl: course.videoUrl3,
                       )));
         },

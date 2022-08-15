@@ -1,17 +1,42 @@
-import 'package:milestone/shared/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class SubCourses2Page extends StatelessWidget {
-  const SubCourses2Page({Key? key}) : super(key: key);
+import '../shared/theme.dart';
+
+class SubCourses2Page extends StatefulWidget {
+  final String videoUrl;
+  final String title;
+  SubCourses2Page({Key? key, required this.videoUrl, required this.title})
+      : super(key: key);
+
+  @override
+  State<SubCourses2Page> createState() => _SubCourses2PageState();
+}
+
+class _SubCourses2PageState extends State<SubCourses2Page> {
+  late YoutubePlayerController ytController;
+  TextEditingController linkController = TextEditingController();
+  TextEditingController seekController = TextEditingController();
+
+  @override
+  void initState() {
+    ytController = YoutubePlayerController(
+      initialVideoId: YoutubePlayer.convertUrlToId(widget.videoUrl)!,
+      flags: const YoutubePlayerFlags(
+        autoPlay: true,
+      ),
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    Widget appbar() {
+    Widget header() {
       return Container(
-        padding: const EdgeInsets.only(right: 9, left: 9, top: 14),
+        padding: EdgeInsets.only(right: 9, left: 9, top: 14),
         width: double.infinity,
-        height: 50,
-        decoration: BoxDecoration(color: kPinkColor),
+        height: 88,
+        decoration: BoxDecoration(color: kWhiteColor),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -24,186 +49,75 @@ class SubCourses2Page extends StatelessWidget {
                 icon: Icon(
                   Icons.keyboard_arrow_left,
                   size: 28,
-                  color: kWhiteColor,
+                  color: kBlackColor,
                 )),
             Text(
-              'Article',
-              style: whiteTextStyle.copyWith(fontSize: 18, fontWeight: bold),
+              widget.title,
+              style: brownTextStyle.copyWith(fontSize: 18, fontWeight: bold),
             ),
             IconButton(
-                onPressed: () {
-                  if (Navigator.canPop(context)) {
-                    Navigator.pop(context);
-                  } else {}
-                },
+                onPressed: () {},
                 icon: Icon(
                   Icons.keyboard_arrow_right,
                   size: 28,
-                  color: kPinkColor,
+                  color: kWhiteColor,
                 )),
           ],
         ),
-      );
-    }
-
-    Widget courseTitle() {
-      return Container(
-        margin: const EdgeInsets.only(right: 2, left: 2, top: 10),
-        width: double.infinity,
-        height: 200,
-        child: Stack(
-          children: <Widget>[
-            Container(
-              alignment: Alignment.center,
-              child: Image.asset(
-                'assets/subcourses_card.png',
-                height: 250,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-            ),
-            Center(
-                child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Mindful',
-                  style: courseStyleTitle.copyWith(
-                      fontWeight: FontWeight.bold, fontSize: 28.0),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  'Journaling',
-                  style: courseStyleTitle.copyWith(
-                      fontWeight: FontWeight.bold, fontSize: 28.0),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  'SUBCOURSE',
-                  style: courseStyleTitle.copyWith(fontSize: 11.0),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
-            )),
-          ],
-        ),
-      );
-    }
-
-    Widget courseContent() {
-      return Container(
-        height: 370,
-        width: 300,
-        margin: EdgeInsets.only(top: 15, left: 2, right: 2),
-        decoration: BoxDecoration(
-            color: kWhiteColor, borderRadius: BorderRadius.circular(18)),
-        child: Center(
-            child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'MINDFUL JOURNALING',
-              style: courseStyleBlack.copyWith(
-                  fontWeight: FontWeight.w100, fontSize: 12.0),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-            Text(
-              'COURSE',
-              style: courseStyleGrey.copyWith(
-                  fontWeight: FontWeight.w100, fontSize: 11.0),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              'This is a',
-              style: courseStyleBlack.copyWith(
-                  fontWeight: FontWeight.bold, fontSize: 34.0),
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-            ),
-            Text(
-              'Subcourse',
-              style: courseStyleBlack.copyWith(
-                  fontWeight: FontWeight.bold, fontSize: 34.0),
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-            ),
-            Text(
-              'Yay!',
-              style: courseStyleBlack.copyWith(
-                  fontWeight: FontWeight.bold, fontSize: 34.0),
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            Text(
-              'Subcourse',
-              style: courseStyleGrey.copyWith(
-                  fontWeight: FontWeight.w100, fontSize: 14.0),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-            Text(
-              'One',
-              style: courseStyleGrey.copyWith(
-                  fontWeight: FontWeight.w100, fontSize: 14.0),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-            Text(
-              'Begin',
-              style: courseStyleGrey.copyWith(
-                  fontWeight: FontWeight.w100, fontSize: 14.0),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-            Text(
-              'Learning',
-              style: courseStyleGrey.copyWith(
-                  fontWeight: FontWeight.w100, fontSize: 14.0),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            Text(
-              'LEARN NOW!',
-              style: courseStylePurple.copyWith(
-                  fontWeight: FontWeight.w100, fontSize: 14.0),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ],
-        )),
       );
     }
 
     return Scaffold(
-      backgroundColor: kPinkColor,
       body: ListView(
         children: [
-          appbar(),
-          Container(
-              margin: const EdgeInsets.symmetric(horizontal: 25),
-              width: double.infinity,
-              child: Column(
-                children: [courseTitle(), courseContent()],
-              ))
+          header(),
+          SizedBox(
+            height: 50,
+          ),
+          Wrap(
+            children: [
+              YoutubePlayer(
+                controller: ytController,
+                showVideoProgressIndicator: true,
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          // Container(
+          //   margin: EdgeInsets.only(left: 25),
+          //   child: Column(
+          //     crossAxisAlignment: CrossAxisAlignment.start,
+          //     children: [
+          //       Text(
+          //         'Title:',
+          //         style: blackTextStyle.copyWith(
+          //             fontSize: 18, fontWeight: semiBold),
+          //       ),
+          //       SizedBox(
+          //         height: 6,
+          //       ),
+          //       Text(ytController.metadata.title,
+          //           style: darkGreyTextStyle.copyWith(fontSize: 14)),
+          //       SizedBox(
+          //         height: 18,
+          //       ),
+          //       Text(
+          //         'Channel:',
+          //         style: blackTextStyle.copyWith(
+          //             fontSize: 18, fontWeight: semiBold),
+          //       ),
+          //       SizedBox(
+          //         height: 6,
+          //       ),
+          //       Text(
+          //         ytController.metadata.author,
+          //         style: darkGreyTextStyle,
+          //       ),
+          //     ],
+          //   ),
+          // )
         ],
       ),
     );
