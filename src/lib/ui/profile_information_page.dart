@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:milestone/cubit/auth_cubit.dart';
 import 'package:milestone/shared/theme.dart';
 import 'package:milestone/ui/settings_detail_page.dart';
 import 'package:milestone/widgets/custom_appbar.dart';
@@ -41,40 +43,48 @@ class ProfileInformationPage extends StatelessWidget {
             SizedBox(
               height: 50,
             ),
-            Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  border: Border.all(color: kLightBrown),
-                  borderRadius: BorderRadius.circular(30)),
-              margin: EdgeInsets.only(left: 25, right: 25),
-              padding: EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Name:',
-                    style: blackTextStyle.copyWith(fontSize: 20),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'Hahahahah hahaha',
-                    style: blackTextStyle.copyWith(fontSize: 14),
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Text(
-                    'Email:',
-                    style: blackTextStyle.copyWith(fontSize: 20),
-                  ),
-                  Text(
-                    'hahahadada@gmail.com',
-                    style: blackTextStyle.copyWith(fontSize: 14),
-                  )
-                ],
-              ),
+            BlocBuilder<AuthCubit, AuthState>(
+              builder: (context, state) {
+                if (state is AuthSuccess) {
+                  return Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: kLightBrown),
+                        borderRadius: BorderRadius.circular(30)),
+                    margin: EdgeInsets.only(left: 25, right: 25),
+                    padding: EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Name:',
+                          style: blackTextStyle.copyWith(fontSize: 20),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          state.user.name,
+                          style: blackTextStyle.copyWith(fontSize: 14),
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Text(
+                          'Email:',
+                          style: blackTextStyle.copyWith(fontSize: 20),
+                        ),
+                        Text(state.user.email,
+                            style: blackTextStyle.copyWith(fontSize: 14),
+                            overflow: TextOverflow.ellipsis)
+                      ],
+                    ),
+                  );
+                } else {
+                  return SizedBox();
+                }
+              },
             ),
           ],
         ),

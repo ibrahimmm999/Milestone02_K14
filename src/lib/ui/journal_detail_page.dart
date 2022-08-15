@@ -3,7 +3,11 @@ import 'package:milestone/shared/theme.dart';
 import 'package:milestone/widgets/custom_header.dart';
 
 class JournalDetailPage extends StatelessWidget {
-  const JournalDetailPage({Key? key}) : super(key: key);
+  final String title;
+  final String contentJournal;
+  const JournalDetailPage(
+      {Key? key, required this.title, required this.contentJournal})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +42,7 @@ class JournalDetailPage extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              'My Journal',
+              title,
               style:
                   blackTextStyle.copyWith(fontSize: 18, fontWeight: semiBold),
               textAlign: TextAlign.center,
@@ -47,7 +51,7 @@ class JournalDetailPage extends StatelessWidget {
               height: 29,
             ),
             Text(
-              'I woke up at 6 oclock in the morning. We had breakfast and dressed up. Today we all went to Fantasize Amusement park near Pune. We started from home at 7 oclock. As soon as we reached there, we bought our tickets and went inside. I was so excited seeing the rides. My parents and brother liked the Thunderfall ride. My favorite rides were Water Splash, Caterpillar Ride, Wave Pool and Pirate Ship. After a couple of hours, we had our lunch. In the afternoon we had the scariest ride that is the Space Gun. We got back to our home in the evening. It was a great day and I enjoyed a lot.\nSammy.',
+              contentJournal,
               style: blackTextStyle.copyWith(fontSize: 12),
             )
           ],

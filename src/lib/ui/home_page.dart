@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:milestone/cubit/auth_cubit.dart';
 import 'package:milestone/cubit/content_cubit.dart';
 import 'package:milestone/shared/theme.dart';
+import 'package:milestone/ui/journal_form.dart';
 import 'package:milestone/ui/article_detail_page.dart';
 import 'package:milestone/ui/article_page.dart';
 import 'package:milestone/ui/courses_page.dart';
@@ -15,6 +16,7 @@ import 'package:bloc/bloc.dart';
 
 import '../models/content_model.dart';
 import '../widgets/log_out_button.dart';
+
 import 'journal_page.dart';
 
 class HomePage extends StatefulWidget {

@@ -6,6 +6,7 @@ import 'package:milestone/ui/settings_detail_page.dart';
 import 'package:milestone/shared/theme.dart';
 import 'package:milestone/widgets/custom_appbar.dart';
 import 'package:milestone/widgets/custom_settingbutton.dart';
+import 'profile_information_page.dart';
 
 import '../cubit/auth_cubit.dart';
 import '../widgets/custom_button.dart';
@@ -94,7 +95,7 @@ class SettingsPage extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        SettingsDetailPage()));
+                                        ProfileInformationPage()));
                           },
                           imagefile: 'assets/profileset.png',
                         ),
