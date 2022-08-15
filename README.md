@@ -1,5 +1,6 @@
 # APLIKASI BASIS DIGITAL “MIND”
 
+
 ## KELOMPOK MILESTONE 14 – TRAILBLAZERS 
 
 **Nama Anggota Kelompok Serta Kontribusinya**
@@ -18,3 +19,10 @@
 13. Bintang Hijriawan Jachja (16521533), Subcourses Page
 14. Manuella Ivana Uli Sianipar (16521354), Subcourses Page
 
+## Cara Menjalankan Aplikasi "Mind"
+1. Install dart sdk
+2. Install flutter sdk
+3. Install android studio
+4. Set up emulator
+5. Buka file main.dart
+6. Start debugging file main.dart
