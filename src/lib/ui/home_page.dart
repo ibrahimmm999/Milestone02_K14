@@ -3,9 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:milestone/cubit/auth_cubit.dart';
 import 'package:milestone/cubit/content_cubit.dart';
 import 'package:milestone/shared/theme.dart';
+import 'package:milestone/ui/article_detail_page.dart';
 import 'package:milestone/ui/article_page.dart';
+import 'package:milestone/ui/courses_page.dart';
 import 'package:milestone/ui/hotline_page.dart';
 import 'package:milestone/ui/sign_in_page.dart';
+import 'package:milestone/ui/subcourses_page.dart';
 import 'package:milestone/widgets/content_card.dart';
 import 'package:milestone/widgets/custom_header.dart';
 import 'package:milestone/widgets/mood_card.dart';
@@ -13,6 +16,7 @@ import 'package:bloc/bloc.dart';
 
 import '../models/content_model.dart';
 import '../widgets/log_out_button.dart';
+import 'journal_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -98,7 +102,10 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => JournalPage()));
+                  },
                   child: Container(
                     height: 62,
                     width: 155,
@@ -232,7 +239,10 @@ class _HomePageState extends State<HomePage> {
 
     Widget course() {
       return GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: ((context) => CoursesPage())));
+        },
         child: Container(
           height: 151,
           width: double.infinity,
@@ -305,7 +315,17 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: contents.map((ContentModel content) {
               if (content.isMostViewed == true) {
-                return ContentCard(content);
+                return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ArticleDetailPage(
+                                  title: content.title,
+                                  content: content.subtitle,
+                                  imageUrl: content.imageUrl)));
+                    },
+                    child: ContentCard(content));
               }
               return SizedBox();
             }).toList(),

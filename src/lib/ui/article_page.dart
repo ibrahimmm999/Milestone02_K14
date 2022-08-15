@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:milestone/ui/article_detail_page.dart';
 import 'package:milestone/widgets/custom_appbar.dart';
 import 'package:milestone/widgets/custom_header.dart';
 
@@ -50,7 +51,18 @@ class _ArticlePageState extends State<ArticlePage> {
         margin: EdgeInsets.only(bottom: 50),
         child: Column(
           children: contents.map((ContentModel content) {
-            return ContentCard(content);
+            return GestureDetector(
+              child: ContentCard(content),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ArticleDetailPage(
+                            title: content.title,
+                            content: content.subtitle,
+                            imageUrl: content.imageUrl)));
+              },
+            );
           }).toList(),
         ),
       );

@@ -48,51 +48,52 @@ class SubCoursesPage extends StatelessWidget {
 
     Widget courseTitle() {
       return Container(
-          margin: const EdgeInsets.only(right: 2, left: 2, top: 10),
-          width: double.infinity,
-          height: 200,
-          child: Stack(
-            children: <Widget>[
-              Container(
-                alignment: Alignment.center,
-                child: Image.asset(
-                  'assets/subcourses_card.png',
-                  height: 250,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
+        margin: const EdgeInsets.only(right: 2, left: 2, top: 10),
+        width: double.infinity,
+        height: 200,
+        child: Stack(
+          children: <Widget>[
+            Container(
+              alignment: Alignment.center,
+              child: Image.asset(
+                'assets/subcourses_card.png',
+                height: 250,
+                width: double.infinity,
+                fit: BoxFit.cover,
               ),
-              Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Mindful',
-                        style: courseStyleTitle.copyWith(fontWeight: FontWeight.bold, fontSize: 28.0),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      Text(
-                        'Journaling',
-                        style: courseStyleTitle.copyWith(fontWeight: FontWeight.bold, fontSize: 28.0),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        'SUBCOURSE',
-                        style: courseStyleTitle.copyWith(fontSize: 11.0),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  )
-                  ),
-            ],
-          ),
+            ),
+            Center(
+                child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Mindful',
+                  style: courseStyleTitle.copyWith(
+                      fontWeight: FontWeight.bold, fontSize: 28.0),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  'Journaling',
+                  style: courseStyleTitle.copyWith(
+                      fontWeight: FontWeight.bold, fontSize: 28.0),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'SUBCOURSE',
+                  style: courseStyleTitle.copyWith(fontSize: 11.0),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            )),
+          ],
+        ),
       );
     }
 
@@ -102,85 +103,93 @@ class SubCoursesPage extends StatelessWidget {
         width: 300,
         margin: EdgeInsets.only(top: 15, left: 2, right: 2),
         decoration: BoxDecoration(
-            color: kWhiteColor,
-            borderRadius: BorderRadius.circular(18)),
+            color: kWhiteColor, borderRadius: BorderRadius.circular(18)),
         child: Center(
             child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'MINDFUL JOURNALING',
-                  style: courseStyleBlack.copyWith(fontWeight: FontWeight.w100, fontSize: 12.0),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  'COURSE',
-                  style: courseStyleGrey.copyWith(fontWeight: FontWeight.w100, fontSize: 11.0),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'This is a',
-                  style: courseStyleBlack.copyWith(fontWeight: FontWeight.bold, fontSize: 34.0),
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  'Subcourse',
-                  style: courseStyleBlack.copyWith(fontWeight: FontWeight.bold, fontSize: 34.0),
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  'Yay!',
-                  style: courseStyleBlack.copyWith(fontWeight: FontWeight.bold, fontSize: 34.0),
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                Text(
-                  'Subcourse',
-                  style: courseStyleGrey.copyWith(fontWeight: FontWeight.w100, fontSize: 14.0),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  'One',
-                  style: courseStyleGrey.copyWith(fontWeight: FontWeight.w100, fontSize: 14.0),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  'Begin',
-                  style: courseStyleGrey.copyWith(fontWeight: FontWeight.w100, fontSize: 14.0),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  'Learning',
-                  style: courseStyleGrey.copyWith(fontWeight: FontWeight.w100, fontSize: 14.0),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                Text(
-                  'LEARN NOW!',
-                  style: courseStylePurple.copyWith(fontWeight: FontWeight.w100, fontSize: 14.0),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
-            )
-        ),
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'MINDFUL JOURNALING',
+              style: courseStyleBlack.copyWith(
+                  fontWeight: FontWeight.w100, fontSize: 12.0),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            Text(
+              'COURSE',
+              style: courseStyleGrey.copyWith(
+                  fontWeight: FontWeight.w100, fontSize: 11.0),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'This is a',
+              style: courseStyleBlack.copyWith(
+                  fontWeight: FontWeight.bold, fontSize: 34.0),
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+            ),
+            Text(
+              'Subcourse',
+              style: courseStyleBlack.copyWith(
+                  fontWeight: FontWeight.bold, fontSize: 34.0),
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+            ),
+            Text(
+              'Yay!',
+              style: courseStyleBlack.copyWith(
+                  fontWeight: FontWeight.bold, fontSize: 34.0),
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Text(
+              'Subcourse',
+              style: courseStyleGrey.copyWith(
+                  fontWeight: FontWeight.w100, fontSize: 14.0),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            Text(
+              'One',
+              style: courseStyleGrey.copyWith(
+                  fontWeight: FontWeight.w100, fontSize: 14.0),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            Text(
+              'Begin',
+              style: courseStyleGrey.copyWith(
+                  fontWeight: FontWeight.w100, fontSize: 14.0),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            Text(
+              'Learning',
+              style: courseStyleGrey.copyWith(
+                  fontWeight: FontWeight.w100, fontSize: 14.0),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Text(
+              'LEARN NOW!',
+              style: courseStylePurple.copyWith(
+                  fontWeight: FontWeight.w100, fontSize: 14.0),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        )),
       );
     }
 
@@ -194,8 +203,8 @@ class SubCoursesPage extends StatelessWidget {
               width: double.infinity,
               child: Column(
                 children: [courseTitle(), courseContent()],
-              )
-          )],
+              ))
+        ],
       ),
     );
   }

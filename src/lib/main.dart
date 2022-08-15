@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
           '/transition-page': (context) => TransitionPage(),
           '/settings-page': (context) => SettingsPage(),
           '/notifications-page': (context) => NotificationsPage(),
-          '/couses-page': (context) => CoursesPage(),
+          '/courses-page': (context) => CoursesPage(),
           '/subcourses-page': (context) => SubCoursesPage(),
 
           //'/main': (context) => MainPage(),
