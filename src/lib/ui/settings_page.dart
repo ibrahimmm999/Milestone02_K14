@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:milestone/ui/home_page.dart';
 import 'package:milestone/ui/settings_detail_page.dart';
 import 'package:milestone/shared/theme.dart';
 import 'package:milestone/widgets/custom_appbar.dart';
@@ -14,8 +15,28 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget appBar() {
-      return CustomAppBar(
-        title: "Settings",
+      return Container(
+        padding: EdgeInsets.only(right: 9, left: 9, top: 14),
+        width: double.infinity,
+        height: 88,
+        decoration: BoxDecoration(color: kLightBrown),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                      (route) => false);
+                },
+                icon: Icon(
+                  Icons.keyboard_arrow_left,
+                  size: 28,
+                  color: kWhiteColor,
+                )),
+          ],
+        ),
       );
     }
 
