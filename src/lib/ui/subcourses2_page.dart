@@ -1,8 +1,8 @@
 import 'package:milestone/shared/theme.dart';
 import 'package:flutter/material.dart';
 
-class SubCoursesPage extends StatelessWidget {
-  const SubCoursesPage({Key? key}) : super(key: key);
+class SubCourses2Page extends StatelessWidget {
+  const SubCourses2Page({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

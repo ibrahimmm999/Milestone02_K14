@@ -38,7 +38,7 @@ class JournalDetailPage extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              'My Journal\n3rd of May 2022',
+              'My Journal',
               style:
                   blackTextStyle.copyWith(fontSize: 18, fontWeight: semiBold),
               textAlign: TextAlign.center,

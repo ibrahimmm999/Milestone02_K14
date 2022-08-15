@@ -8,7 +8,6 @@ import 'package:milestone/ui/article_page.dart';
 import 'package:milestone/ui/courses_page.dart';
 import 'package:milestone/ui/hotline_page.dart';
 import 'package:milestone/ui/sign_in_page.dart';
-import 'package:milestone/ui/subcourses_page.dart';
 import 'package:milestone/widgets/content_card.dart';
 import 'package:milestone/widgets/custom_header.dart';
 import 'package:milestone/widgets/mood_card.dart';

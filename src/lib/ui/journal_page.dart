@@ -12,34 +12,27 @@ class Journals extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => JournalDetailPage()));
-      },
-      child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 30),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(day,
-                  style:
-                      blackTextStyle.copyWith(fontSize: 14, fontWeight: bold)),
-              SizedBox(height: 4),
-              Text(content,
-                  style: greyTextStyle.copyWith(
-                      fontSize: 12, fontWeight: reguler)),
-              SizedBox(height: 15),
-              Image.asset('assets/GoJournal.png', height: 13, width: 17),
-              Divider(
-                height: 30,
-                indent: 25,
-                endIndent: 25,
-                thickness: 1,
-              )
-            ],
-          )),
-    );
+    return Container(
+        margin: EdgeInsets.symmetric(horizontal: 30),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(day,
+                style: blackTextStyle.copyWith(fontSize: 14, fontWeight: bold)),
+            SizedBox(height: 4),
+            Text(content,
+                style:
+                    greyTextStyle.copyWith(fontSize: 12, fontWeight: reguler)),
+            SizedBox(height: 15),
+            Image.asset('assets/GoJournal.png', height: 13, width: 17),
+            Divider(
+              height: 30,
+              indent: 25,
+              endIndent: 25,
+              thickness: 1,
+            )
+          ],
+        ));
   }
 }
 
@@ -60,7 +53,7 @@ class JournalPage extends StatelessWidget {
           Navigator.pop(context);
         },
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 30),
+          margin: EdgeInsets.only(left: 10, bottom: 20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             SizedBox(height: 8),
@@ -83,19 +76,52 @@ class JournalPage extends StatelessWidget {
     }
 
     Widget journal1() {
-      return Journals(day: 'Today', content: 'Lorem ipsum si dolor amet');
+      return GestureDetector(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => JournalDetailPage()));
+        },
+        child: Container(
+            decoration: BoxDecoration(color: kTransparentColor),
+            child:
+                Journals(day: 'Today', content: 'Lorem ipsum si dolor amet')),
+      );
     }
 
     Widget journal2() {
-      return Journals(day: 'Yesterday', content: 'Lorem ipsum si dolor amet');
+      return GestureDetector(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => JournalDetailPage()));
+          },
+          child: Container(
+              decoration: BoxDecoration(color: kTransparentColor),
+              child: Journals(
+                  day: 'Yesterday', content: 'Lorem ipsum si dolor amet')));
     }
 
     Widget journal3() {
-      return Journals(day: '1 August', content: 'Lorem ipsum si dolor amet');
+      return GestureDetector(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => JournalDetailPage()));
+          },
+          child: Container(
+              decoration: BoxDecoration(color: kTransparentColor),
+              child: Journals(
+                  day: '1 August', content: 'Lorem ipsum si dolor amet')));
     }
 
     Widget journal4() {
-      return Journals(day: '31 July', content: 'Lorem ipsum si dolor amet');
+      return GestureDetector(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => JournalDetailPage()));
+          },
+          child: Container(
+              decoration: BoxDecoration(color: kTransparentColor),
+              child: Journals(
+                  day: '31 July', content: 'Lorem ipsum si dolor amet')));
     }
 
     return Scaffold(

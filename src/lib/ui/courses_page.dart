@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:milestone/ui/subcourses_page.dart';
+import 'package:milestone/ui/sub_courses_page.dart';
+import 'package:milestone/ui/subcourses2_page.dart';
 
 class CoursesPage extends StatelessWidget {
   int _counter = 0;

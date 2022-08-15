@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:milestone/ui/home_page.dart';
+import 'package:milestone/ui/change_password_page.dart';
 import 'package:milestone/ui/settings_detail_page.dart';
 import 'package:milestone/shared/theme.dart';
 import 'package:milestone/widgets/custom_appbar.dart';
@@ -117,7 +118,7 @@ class SettingsPage extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        SettingsDetailPage()));
+                                        ChangePasswordPage()));
                           },
                           imagefile: 'assets/passwordset.png',
                         ),
