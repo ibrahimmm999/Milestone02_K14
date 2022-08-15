@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:milestone/models/course_model.dart';
+import 'package:milestone/ui/video_course_page.dart';
 
 import '../shared/theme.dart';
 import 'subcourses2_page.dart';
 
 class SubCoursesPage extends StatelessWidget {
-  const SubCoursesPage({Key? key}) : super(key: key);
+  final CourseModel course;
+  SubCoursesPage({Key? key, required this.course}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,8 +54,12 @@ class SubCoursesPage extends StatelessWidget {
     Widget subcourse1() {
       return GestureDetector(
         onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => SubCourses2Page()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => VideoCoursePage(
+                        videoUrl: course.videoUrl1,
+                      )));
         },
         child: Container(
           margin: EdgeInsets.only(left: 25, right: 25, bottom: 30),
@@ -81,8 +88,10 @@ class SubCoursesPage extends StatelessWidget {
                     style: blueTextStyle.copyWith(fontSize: 13),
                   ),
                   Text(
-                    'Sub\ncourse\n1',
+                    course.titleSub1,
                     style: blackTextStyle.copyWith(fontSize: 22),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
                   ),
                   Container(
                     child: Text('Course 1'),
@@ -107,8 +116,12 @@ class SubCoursesPage extends StatelessWidget {
     Widget subcourse2() {
       return GestureDetector(
         onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => SubCourses2Page()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => VideoCoursePage(
+                        videoUrl: course.videoUrl2,
+                      )));
         },
         child: Container(
           margin: EdgeInsets.only(left: 25, right: 25, bottom: 30),
@@ -137,8 +150,10 @@ class SubCoursesPage extends StatelessWidget {
                     style: blueTextStyle.copyWith(fontSize: 13),
                   ),
                   Text(
-                    'Sub\ncourse\n2',
+                    course.titleSub2,
                     style: blackTextStyle.copyWith(fontSize: 22),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
                   ),
                   Container(
                     child: Text('Course 2'),
@@ -163,8 +178,12 @@ class SubCoursesPage extends StatelessWidget {
     Widget subcourse3() {
       return GestureDetector(
         onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => SubCourses2Page()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => VideoCoursePage(
+                        videoUrl: course.videoUrl3,
+                      )));
         },
         child: Container(
           margin: EdgeInsets.only(left: 25, right: 25, bottom: 30),
@@ -193,8 +212,10 @@ class SubCoursesPage extends StatelessWidget {
                     style: blueTextStyle.copyWith(fontSize: 13),
                   ),
                   Text(
-                    'Sub\ncourse\n3',
+                    course.titleSub3,
                     style: blackTextStyle.copyWith(fontSize: 22),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
                   ),
                   Container(
                     child: Text('Course 3'),

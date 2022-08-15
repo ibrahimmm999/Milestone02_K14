@@ -1,83 +1,79 @@
 import 'package:flutter/material.dart';
 import 'package:milestone/ui/sub_courses_page.dart';
 import 'package:milestone/ui/subcourses2_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:milestone/widgets/custom_appbar.dart';
 
-class CoursesPage extends StatelessWidget {
-  int _counter = 0;
+import '../cubit/course_cubit.dart';
+import '../models/course_model.dart';
+import '../shared/theme.dart';
 
+class CoursesPage extends StatefulWidget {
   @override
+  State<CoursesPage> createState() => _CoursesPageState();
+}
+
+class _CoursesPageState extends State<CoursesPage> {
+  @override
+  void initState() {
+    context.read<CourseCubit>().fetchCourse();
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          "Courses",
-          style: TextStyle(color: Color.fromRGBO(206, 125, 107, 1.0)),
+    Widget header() {
+      return CustomAppBar(title: 'Courses');
+    }
+
+    Widget courseList(List<CourseModel> courses) {
+      return Container(
+        margin: EdgeInsets.only(bottom: 50),
+        child: Column(
+          children: courses.map((CourseModel course) {
+            return GestureDetector(
+              child: Container(
+                width: 400,
+                height: 270,
+                decoration: BoxDecoration(
+                    image:
+                        DecorationImage(image: NetworkImage(course.thumbnail))),
+              ),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => SubCoursesPage(
+                              course: course,
+                            )));
+              },
+            );
+          }).toList(),
         ),
-        backgroundColor: Color.fromRGBO(245, 211, 180, 1.0),
-      ),
-      body: ListView(
-        children: [
-          GestureDetector(
-            onTap: (() {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SubCoursesPage()));
-            }),
-            child: Container(
-                height: 310,
-                width: 300,
-                padding: EdgeInsets.only(top: 40),
-                color: Colors.white,
-                child: Image(
-                  image: AssetImage("assets/mindful.png"),
-                  fit: BoxFit.fill,
-                )),
+      );
+    }
+
+    return BlocConsumer<CourseCubit, CourseState>(listener: (context, state) {
+      // TODO: implement listener
+      if (state is CourseFailed) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(state.error),
+          backgroundColor: kRedColor,
+        ));
+      }
+    }, builder: (context, state) {
+      if (state is CourseSuccess) {
+        return Scaffold(
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [header(), courseList(state.course)],
+            ),
           ),
-          GestureDetector(
-            onTap: (() {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SubCoursesPage()));
-            }),
-            child: Container(
-                height: 270,
-                width: 300,
-                color: Colors.white,
-                child: Image(
-                  image: AssetImage("assets/meditating.png"),
-                  fit: BoxFit.fill,
-                )),
-          ),
-          GestureDetector(
-            onTap: (() {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SubCoursesPage()));
-            }),
-            child: Container(
-                height: 270,
-                width: 300,
-                color: Colors.white,
-                child: Image(
-                  image: AssetImage("assets/selflove.png"),
-                  fit: BoxFit.fill,
-                )),
-          ),
-          GestureDetector(
-            onTap: (() {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SubCoursesPage()));
-            }),
-            child: Container(
-                height: 270,
-                width: 300,
-                color: Colors.white,
-                child: Image(
-                  image: AssetImage("assets/moodtrack.png"),
-                  fit: BoxFit.fill,
-                )),
-          ),
-        ],
-      ),
-    );
+        );
+      }
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    });
   }
 }

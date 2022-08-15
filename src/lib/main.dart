@@ -12,6 +12,9 @@ import 'package:milestone/ui/transition_page.dart';
 
 import 'cubit/auth_cubit.dart';
 import 'cubit/content_cubit.dart';
+import 'cubit/course_cubit.dart';
+import 'cubit/journal_cubit.dart';
+import 'cubit/mood_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,6 +31,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => AuthCubit()),
         BlocProvider(create: (context) => ContentCubit()),
+        BlocProvider(create: (context) => JournalCubit()),
+        BlocProvider(create: (context) => CourseCubit()),
+        BlocProvider(create: (context) => MoodCubit()),
       ],
       child: MaterialApp(
         home: SplashPage(),
