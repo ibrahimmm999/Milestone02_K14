@@ -9,7 +9,7 @@ Aplikasi Basis Digital MIND merupakan suatu bentuk produk penerapan Design Think
 1. Muhammad Aji Wibisono (16521119), Settings Page, Presentation
 2. Abraham Megantoro Samudra (16521145), Subcourses Page Code, Figma Design
 3. Nicholas (16521356), Journal Page Code, Figma Design
-4. Kinanti Wening Asih (16521154), Hotline Page, Figma Design 
+4. Kinanti Wening Asih (16521154), Hotline Page, Figma Design, Presentation
 5. Justin Yusuf Abidjoko (16521494), Subcourses Page Code, Presentation
 6. Imanuel Raditya (16521421) , Settings Details Page Code
 7. Salomo Reinhart Gregory Manalu (16521331), Courses Page Code
