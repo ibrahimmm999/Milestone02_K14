@@ -19,7 +19,7 @@ class SettingsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: double.infinity,
-        height: 67,
+        height: 80,
         child: TextButton(
             onPressed: onPressed,
             child: Container(

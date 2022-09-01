@@ -19,9 +19,7 @@ class LandingPage extends StatelessWidget {
                 fit: BoxFit.cover)),
         child: Column(
           children: [
-            SizedBox(
-              height: 550,
-            ),
+            Spacer(flex: 5),
             CustomButton(
               buttonColor: kPinkColor,
               buttonText: 'Create Account',
@@ -49,6 +47,7 @@ class LandingPage extends StatelessWidget {
               widthButton: 325,
               heightButton: 50,
             ),
+            Spacer(),
           ],
         ),
       );
