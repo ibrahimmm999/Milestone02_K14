@@ -20,7 +20,12 @@ import '../widgets/log_out_button.dart';
 import 'journal_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  bool happyBool = false;
+  bool calmBool = false;
+  bool manicBool = false;
+  bool angryBool = false;
+  bool sadBool = false;
+  HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -82,11 +87,86 @@ class _HomePageState extends State<HomePage> {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              MoodCard(urlImage: 'assets/happy_icon.png'),
-              MoodCard(urlImage: 'assets/calm_icon.png'),
-              MoodCard(urlImage: 'assets/manic_icon.png'),
-              MoodCard(urlImage: 'assets/angry_icon.png'),
-              MoodCard(urlImage: 'assets/sad_icon.png'),
+              GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      widget.happyBool = !widget.happyBool;
+                    });
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(left: 25),
+                    height: 84,
+                    width: 59,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(widget.happyBool
+                                ? 'assets/happy2.png'
+                                : 'assets/happy_icon.png'))),
+                  )),
+              GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      widget.calmBool = !widget.calmBool;
+                    });
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(left: 25),
+                    height: 84,
+                    width: 59,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(widget.calmBool
+                                ? 'assets/calm2.png'
+                                : 'assets/calm_icon.png'))),
+                  )),
+              GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      widget.manicBool = !widget.manicBool;
+                    });
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(left: 25),
+                    height: 84,
+                    width: 59,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(widget.manicBool
+                                ? 'assets/manic2.png'
+                                : 'assets/manic_icon.png'))),
+                  )),
+              GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      widget.angryBool = !widget.angryBool;
+                    });
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(left: 25),
+                    height: 84,
+                    width: 59,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(widget.angryBool
+                                ? 'assets/angry2.png'
+                                : 'assets/angry_icon.png'))),
+                  )),
+              GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      widget.sadBool = !widget.sadBool;
+                    });
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(left: 25),
+                    height: 84,
+                    width: 59,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(widget.sadBool
+                                ? 'assets/sad2.png'
+                                : 'assets/sad_icon.png'))),
+                  )),
             ],
           ),
         ),
