@@ -28,7 +28,7 @@
   </intent>
 </queries>
    <application
-        android:label="milestone"
+        android:label="Mind"
         android:usesCleartextTraffic="true"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
