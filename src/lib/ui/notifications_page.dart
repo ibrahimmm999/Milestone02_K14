@@ -34,7 +34,7 @@ class NotificationsPage extends StatelessWidget {
 
     Widget content1() {
       return Container(
-        height: 151,
+        height: 155,
         width: double.infinity,
         margin: EdgeInsets.only(right: 25, left: 25, top: 18),
         padding: EdgeInsets.only(top: 20, left: 20),
@@ -84,7 +84,7 @@ class NotificationsPage extends StatelessWidget {
 
     Widget content2() {
       return Container(
-        height: 151,
+        height: 155,
         width: double.infinity,
         margin: EdgeInsets.only(right: 25, left: 25, top: 18),
         padding: EdgeInsets.only(top: 20, left: 20),
